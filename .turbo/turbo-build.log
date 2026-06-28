@@ -1,0 +1,34 @@
+
+> taskflow@1.0.0 build
+> next build
+
+   ▲ Next.js 15.5.19
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 4.9s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/5) ...
+   Generating static pages (1/5) 
+   Generating static pages (2/5) 
+   Generating static pages (3/5) 
+ ✓ Generating static pages (5/5)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                      442 B         106 kB
+├ ○ /_not-found                            989 B         103 kB
+├ ƒ /board                               22.1 kB         189 kB
+└ ○ /login                               1.49 kB         172 kB
++ First Load JS shared by all             102 kB
+  ├ chunks/18-a6801e2fc629b9f0.js        46.3 kB
+  ├ chunks/87c73c54-24122e7b92478d00.js  54.2 kB
+  └ other shared chunks (total)          1.95 kB
+
+
+ƒ Middleware                               90 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

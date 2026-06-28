@@ -1,0 +1,137 @@
+.main {
+  min-height: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem clamp(1.25rem, 4vw, 2.5rem) 4rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.5rem 2.5rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.logoMark {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.hero {
+  text-align: center;
+  padding-top: clamp(2rem, 8vw, 5rem);
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  margin-bottom: 1.75rem;
+}
+
+.title {
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.lead {
+  margin-top: 1.5rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.actions {
+  margin-top: 2.25rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.preview {
+  margin-top: clamp(3rem, 8vw, 5.5rem);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.colHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.colCount {
+  background: var(--surface-2);
+  border-radius: 999px;
+  padding: 0.05rem 0.5rem;
+  font-size: 0.72rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.75rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cardLine {
+  height: 7px;
+  border-radius: 999px;
+  background: var(--border-light);
+  flex: 1;
+}
+
+@media (max-width: 640px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+}
