@@ -65,14 +65,26 @@ npm run dev:next     # http://localhost:3000
 npm run dev:server   # http://localhost:4000
 ```
 
-## Déploiement
+## Déploiement (Vercel — front + API dans le même projet)
 
-- **Front** : Vercel, *Root Directory* = `apps/taskflow`. Renseignez
-  `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, et
-  `NEXT_PUBLIC_API_URL` (URL publique de l'API Express).
-- **API Express** : déployez `server/` sur un service Node (Railway, Render, Fly…)
-  avec `npm run start:server`. Renseignez `CORS_ORIGIN` (= l'URL du front),
-  `API_PORT`, et les variables Supabase.
+L'API Express est servie en **fonction serverless Vercel** : `api/index.ts` exporte
+l'app Express, et `vercel.json` redirige `/api/*` vers cette fonction. Le front et
+l'API partagent donc le **même domaine** → aucune config `NEXT_PUBLIC_API_URL`,
+aucun CORS, un seul déploiement.
+
+1. Vercel → *New Project*, *Root Directory* = `apps/taskflow`.
+2. Variables d'environnement (Production + Preview) :
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - **Ne définissez pas** `NEXT_PUBLIC_API_URL` (laissé vide → appels relatifs).
+3. Déployez. Le front appelle `/api/...` sur sa propre origine.
+
+> En local, à l'inverse, le front (3000) et Express (4000) sont sur des ports
+> différents : `.env.local` définit `NEXT_PUBLIC_API_URL=http://localhost:4000`.
+
+> **Alternative** (hébergeur Node classique type Railway/Render) : lancez
+> `npm run start:server`, puis renseignez sur Vercel `NEXT_PUBLIC_API_URL` (URL
+> publique de l'API) et, côté API, `CORS_ORIGIN` (= URL du front).
 
 ## Stack
 

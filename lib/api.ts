@@ -1,7 +1,9 @@
 import { createClient } from "./supabase/client";
 import type { Priority, Task } from "./types";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000";
+// Vide par défaut → requêtes relatives (même origine que le front, cas Vercel).
+// En local, .env.local définit NEXT_PUBLIC_API_URL=http://localhost:4000.
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "";
 
 async function authHeaders(): Promise<Record<string, string>> {
   const supabase = createClient();

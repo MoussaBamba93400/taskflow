@@ -3,9 +3,24 @@
 > next build
 
    ▲ Next.js 15.5.19
+   - Environments: .env.local
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 4.9s
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (102kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (250kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+ ⚠ Compiled with warnings in 2.2s
+
+../../node_modules/@supabase/supabase-js/dist/index.mjs
+A Node.js API is used (process.version at line: 27) which is not supported in the Edge Runtime.
+Learn more: https://nextjs.org/docs/api-reference/edge-runtime
+
+Import trace for requested module:
+../../node_modules/@supabase/supabase-js/dist/index.mjs
+../../node_modules/@supabase/ssr/dist/module/createServerClient.js
+../../node_modules/@supabase/ssr/dist/module/index.js
+./lib/supabase/middleware.ts
+
+ ✓ Compiled successfully in 9.4s
    Linting and checking validity of types ...
    Collecting page data ...
    Generating static pages (0/5) ...
@@ -20,7 +35,7 @@ Route (app)                                 Size  First Load JS
 ┌ ○ /                                      442 B         106 kB
 ├ ○ /_not-found                            989 B         103 kB
 ├ ƒ /board                               22.1 kB         189 kB
-└ ○ /login                               1.49 kB         172 kB
+└ ○ /login                               1.51 kB         172 kB
 + First Load JS shared by all             102 kB
   ├ chunks/18-a6801e2fc629b9f0.js        46.3 kB
   ├ chunks/87c73c54-24122e7b92478d00.js  54.2 kB
